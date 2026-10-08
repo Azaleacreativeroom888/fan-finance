@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ｜小判ノート 金融学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#daa520;
+  --gold-deep:#a97c0f;
+  --gold-pale:#fbefc4;
+  --paper:#fffcee;
+  --ink:#3b2a10;
+  --ink-soft:#6b5632;
+  --line:#ecd98f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.9;font-size:16px;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px);
+}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.5;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{background:var(--gold);border-bottom:4px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.35rem;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover,nav a[aria-current="page"]{background:var(--ink);color:var(--gold-pale)}
+
+/* page title */
+.page-title{padding:40px 0 20px}
+.page-title .box{background:var(--paper);border:2px solid var(--ink);border-left:14px solid var(--gold);box-shadow:6px 6px 0 var(--gold);padding:18px 28px;display:flex;align-items:center;gap:20px}
+.page-title h1{font-size:clamp(1.6rem,4vw,2.2rem)}
+.page-title p{margin:4px 0 0;color:var(--ink-soft)}
+.page-title svg{flex:none;width:72px;height:72px}
+
+/* feed */
+.feed{max-width:680px;margin:0 auto;padding-bottom:24px}
+.entry{display:flex;gap:14px;background:var(--paper);border:2px solid var(--ink);border-radius:4px;padding:14px 18px;margin-bottom:12px}
+.avatar{flex:none;width:44px;height:44px;border-radius:50%;background:var(--gold);border:2px solid var(--ink);overflow:hidden}
+.avatar svg{display:block;width:100%;height:100%}
+.entry time{display:block;font-size:.85rem;font-weight:700;color:var(--gold-deep);line-height:1.6}
+.entry p{margin:4px 0 0}
+.end{text-align:center;color:var(--ink-soft);font-size:.9rem;margin:20px 0 0}
+.back{text-align:center;margin:12px 0 0}
+.back a{font-weight:700}
+
+footer{margin-top:40px;background:var(--ink);color:var(--gold-pale);padding:18px 0;font-size:.9rem;text-align:center}
+
+@media (max-width:760px){
+  .page-title .box{padding:14px 18px;gap:14px}
+  .page-title svg{width:56px;height:56px}
+  .entry{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- 招き猫アイコン（アバター用） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="neko-face" viewBox="0 0 120 120">
+    <polygon points="22,48 20,14 52,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="98,48 100,14 68,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="60" cy="68" rx="42" ry="34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4"/>
+    <path d="M54 36 q6 9 12 0" fill="none" stroke="#daa520" stroke-width="5" stroke-linecap="round"/>
+    <path d="M36 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <path d="M70 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="33" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <circle cx="87" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <ellipse cx="60" cy="74" rx="4" ry="3" fill="#b3322a"/>
+    <path d="M52 81 q4 6 8 0 q4 6 8 0" fill="none" stroke="#3b2a10" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 108 q30 14 60 0 l0 8 q-30 14 -60 0 z" fill="#b3322a"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">小判ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html" aria-current="page">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <div class="box">
+        <svg viewBox="0 0 120 120" role="img" aria-label="招き猫のアイコン"><use href="#neko-face"/></svg>
+        <div>
+          <h1>勉強ブログ</h1>
+          <p>毎日の勉強の進み具合を、短くメモしています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="feed">
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-08">2026.10.08</time>
+          <p>今日は信用創造の章を読んだ。銀行が預金を貸し出すと、お金が増えていくしくみが少しずつ見えてきた。明日は図にまとめてみる。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-07">2026.10.07</time>
+          <p>金利が上がると債券の価格が下がる理由を、例を作って計算してみた。式だけだとピンとこないので、数字で確かめるのが大事。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-06">2026.10.06</time>
+          <p>貨幣の歴史を読み終わった。物々交換から貨幣、そして信用へ。招き猫の小判も、ある意味お金の歴史の一部かもしれない。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-05">2026.10.05</time>
+          <p>お休み。でも電車の中で、昨日のノートを見返した。復習は短くても毎日やると違う気がする。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-04">2026.10.04</time>
+          <p>中央銀行は何をする場所なのか、入門書でざっくり読んだ。政策金利という言葉が何度も出てくるので、次はここをしっかり調べたい。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-03">2026.10.03</time>
+          <p>複利の計算をした。72の法則を知ってびっくり。お金が2倍になる年数が暗算でわかるなんて便利すぎる。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-02">2026.10.02</time>
+          <p>金融とは何か、という最初の章を読み直した。「お金を融通する」という言葉の意味がやっと腑に落ちた気がする。</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="avatar" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#neko-face"/></svg></div>
+        <div>
+          <time datetime="2026-10-01">2026.10.01</time>
+          <p>今日から金融学の勉強ノートを始めます。まずは教科書の目次を眺めて、勉強する順番を決めた。がんばる。</p>
+        </div>
+      </article>
+
+      <p class="end">これより前の記録はありません</p>
+      <p class="back"><a href="index.html">ホームにもどる</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 小判ノート｜金融学の勉強サイト</div>
+</footer>
+
+</body>
+</html>
