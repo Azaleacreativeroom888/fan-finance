@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小判ノート｜金融学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#daa520;
+  --gold-deep:#a97c0f;
+  --gold-pale:#fbefc4;
+  --paper:#fffcee;
+  --ink:#3b2a10;
+  --ink-soft:#6b5632;
+  --red:#b3322a;
+  --line:#ecd98f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.9;font-size:16px;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px);
+}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.5;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{background:var(--gold);border-bottom:4px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.35rem;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover{background:var(--ink);color:var(--gold-pale)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--gold-pale)}
+
+/* hero */
+.hero{padding:48px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;align-items:center}
+.hero-text{background:var(--paper);padding:24px 28px;border:2px solid var(--ink);border-left:14px solid var(--gold);box-shadow:6px 6px 0 var(--gold)}
+.hero h1{font-size:clamp(1.8rem,4.6vw,2.7rem);font-weight:700}
+.hero p{margin:14px 0 0;color:var(--ink-soft)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:8px 20px;border:2px solid var(--ink);font-weight:700;text-decoration:none;background:var(--gold);border-radius:4px}
+.btn.sub{background:var(--paper)}
+.btn:hover{background:var(--ink);color:var(--gold-pale)}
+.neko{display:block;width:100%;max-width:300px;margin:0 auto;height:auto}
+.paw{transform-box:fill-box;transform-origin:50% 100%;animation:beckon 2.4s ease-in-out infinite}
+@keyframes beckon{0%,100%{transform:rotate(0)}50%{transform:rotate(-14deg)}}
+@media (prefers-reduced-motion:reduce){.paw{animation:none}}
+
+/* sections */
+section{padding:28px 0}
+.sec-title{display:inline-block;background:var(--gold);border:2px solid var(--ink);padding:2px 18px;font-size:1.35rem;margin-bottom:20px;border-radius:4px}
+.panel{background:var(--paper);border:2px solid var(--ink);padding:20px 24px}
+.panel p{margin:0}
+
+/* study topics */
+.topics{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px}
+.topics li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px dashed var(--gold-deep)}
+.topics b{font-weight:500}
+.tag{flex:none;font-size:.82rem;padding:0 10px;border:1.5px solid var(--ink);border-radius:20px;background:var(--paper)}
+.tag.done{background:var(--ink);color:var(--gold-pale)}
+.tag.now{background:var(--gold)}
+
+/* blog preview */
+.posts{display:grid;gap:12px}
+.post{background:var(--paper);border:2px solid var(--ink);border-radius:4px;padding:12px 18px}
+.post time{display:block;font-size:.85rem;color:var(--gold-deep);font-weight:700}
+.post p{margin:0}
+
+/* column preview */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border:2px solid var(--ink);text-decoration:none;display:block}
+.card:hover{background:var(--gold-pale)}
+.thumb{height:110px;background:var(--gold-pale);border-bottom:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.1rem;color:var(--gold-deep)}
+.card-body{padding:10px 16px 14px}
+.card-body h3{font-size:1rem}
+.kind{font-size:.82rem;color:var(--ink-soft)}
+.more{margin-top:16px;text-align:right}
+.more a{font-weight:700}
+
+footer{margin-top:40px;background:var(--ink);color:var(--gold-pale);padding:18px 0;font-size:.9rem;text-align:center}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  .neko{max-width:230px}
+  .topics{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">小判ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1>金融学を、<br>ノートに書いて学ぶ。</h1>
+        <p>お金はどう動き、銀行や市場はどう働くのか。金融学を勉強中の学生が、学んだことを毎日ノートにまとめていくサイトです。</p>
+        <div class="btns">
+          <a class="btn" href="blog.html">勉強の記録を見る</a>
+          <a class="btn sub" href="column.html">コラムを読む</a>
+        </div>
+      </div>
+
+      <svg class="neko" viewBox="0 0 240 290" role="img" aria-label="小判を抱えた招き猫のイラスト">
+        <!-- feet -->
+        <ellipse cx="88" cy="268" rx="26" ry="14" fill="#fffdf5" stroke="#3b2a10" stroke-width="3"/>
+        <ellipse cx="152" cy="268" rx="26" ry="14" fill="#fffdf5" stroke="#3b2a10" stroke-width="3"/>
+        <!-- body -->
+        <ellipse cx="120" cy="210" rx="68" ry="62" fill="#fffdf5" stroke="#3b2a10" stroke-width="3"/>
+        <!-- left arm -->
+        <ellipse cx="68" cy="212" rx="15" ry="30" fill="#fffdf5" stroke="#3b2a10" stroke-width="3" transform="rotate(10 68 212)"/>
+        <!-- ears -->
+        <polygon points="62,84 58,36 100,64" fill="#fffdf5" stroke="#3b2a10" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="178,84 182,36 140,64" fill="#fffdf5" stroke="#3b2a10" stroke-width="3" stroke-linejoin="round"/>
+        <polygon points="68,74 66,50 86,64" fill="#daa520"/>
+        <polygon points="172,74 174,50 154,64" fill="#daa520"/>
+        <!-- head -->
+        <ellipse cx="120" cy="112" rx="68" ry="56" fill="#fffdf5" stroke="#3b2a10" stroke-width="3"/>
+        <!-- forehead mark -->
+        <path d="M112 62 q8 12 16 0" fill="none" stroke="#daa520" stroke-width="5" stroke-linecap="round"/>
+        <!-- face -->
+        <path d="M86 108 q9 -10 18 0" fill="none" stroke="#3b2a10" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M136 108 q9 -10 18 0" fill="none" stroke="#3b2a10" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="80" cy="126" r="9" fill="#daa520" opacity=".45"/>
+        <circle cx="160" cy="126" r="9" fill="#daa520" opacity=".45"/>
+        <ellipse cx="120" cy="120" rx="5" ry="3.5" fill="#b3322a"/>
+        <path d="M108 129 q6 8 12 0 q6 8 12 0" fill="none" stroke="#3b2a10" stroke-width="3" stroke-linecap="round"/>
+        <path d="M58 116 l-22 -4 M58 126 l-22 6 M182 116 l22 -4 M182 126 l22 6" stroke="#3b2a10" stroke-width="2" stroke-linecap="round"/>
+        <!-- collar & bell -->
+        <path d="M72 162 q48 20 96 0 l2 14 q-50 22 -100 0 z" fill="#b3322a" stroke="#3b2a10" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="120" cy="184" r="10" fill="#daa520" stroke="#3b2a10" stroke-width="3"/>
+        <line x1="112" y1="184" x2="128" y2="184" stroke="#3b2a10" stroke-width="2"/>
+        <!-- koban -->
+        <ellipse cx="120" cy="230" rx="36" ry="25" fill="#daa520" stroke="#3b2a10" stroke-width="3"/>
+        <ellipse cx="120" cy="230" rx="28" ry="18" fill="none" stroke="#3b2a10" stroke-width="1.5"/>
+        <text x="120" y="236" text-anchor="middle" font-size="17" font-weight="700" fill="#3b2a10" font-family="Shippori Mincho, serif">万両</text>
+        <!-- raised paw -->
+        <g class="paw">
+          <ellipse cx="180" cy="126" rx="17" ry="38" fill="#fffdf5" stroke="#3b2a10" stroke-width="3" transform="rotate(-12 180 126)"/>
+          <circle cx="178" cy="100" r="5" fill="#daa520"/>
+          <circle cx="170" cy="112" r="3" fill="#daa520"/>
+          <circle cx="186" cy="112" r="3" fill="#daa520"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">このサイトについて</h2>
+      <div class="panel">
+        <p>金融学の基礎から少しずつ学んでいる記録です。教科書で読んだことを自分の言葉でノートにまとめ、ブログに進捗を残し、コラムでは漫画やイラストもまじえながら、小論文のように考えをまとめています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">勉強中のテーマ</h2>
+      <div class="panel">
+        <ul class="topics">
+          <li><b>お金の役割と貨幣の歴史</b><span class="tag done">済</span></li>
+          <li><b>銀行と信用創造</b><span class="tag now">勉強中</span></li>
+          <li><b>金利と債券の価格</b><span class="tag now">勉強中</span></li>
+          <li><b>株式とリスク・リターン</b><span class="tag">予定</span></li>
+          <li><b>為替と国際金融</b><span class="tag">予定</span></li>
+          <li><b>中央銀行と金融政策</b><span class="tag">予定</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">最近のブログ</h2>
+      <div class="posts">
+        <article class="post">
+          <time datetime="2026-10-08">2026.10.08</time>
+          <p>今日は信用創造の章を読んだ。銀行が預金を貸し出すと、お金が増えていくしくみが少しずつ見えてきた。明日は図にまとめてみる。</p>
+        </article>
+        <article class="post">
+          <time datetime="2026-10-07">2026.10.07</time>
+          <p>金利が上がると債券の価格が下がる理由を、例を作って計算してみた。式だけだとピンとこないので、数字で確かめるのが大事。</p>
+        </article>
+        <article class="post">
+          <time datetime="2026-10-06">2026.10.06</time>
+          <p>貨幣の歴史を読み終わった。物々交換から貨幣、そして信用へ。招き猫の小判も、ある意味お金の歴史の一部かもしれない。</p>
+        </article>
+      </div>
+      <p class="more"><a href="blog.html">ブログをもっと見る</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="sec-title">コラム</h2>
+      <div class="cards">
+        <a class="card" href="column.html">
+          <div class="thumb">4コマ</div>
+          <div class="card-body"><span class="kind">漫画</span><h3>金利が上がると債券はどうなる？</h3></div>
+        </a>
+        <a class="card" href="column.html">
+          <div class="thumb">小論文</div>
+          <div class="card-body"><span class="kind">記事</span><h3>お金はなぜ「信用」で動くのか</h3></div>
+        </a>
+        <a class="card" href="column.html">
+          <div class="thumb">イラスト</div>
+          <div class="card-body"><span class="kind">イラスト</span><h3>招き猫と学ぶ複利のふしぎ</h3></div>
+        </a>
+      </div>
+      <p class="more"><a href="column.html">コラムをもっと見る</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 小判ノート｜金融学の勉強サイト</div>
+</footer>
+
+</body>
+</html>
