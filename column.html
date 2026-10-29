@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム｜小判ノート 金融学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#daa520;
+  --gold-deep:#a97c0f;
+  --gold-pale:#fbefc4;
+  --paper:#fffcee;
+  --ink:#3b2a10;
+  --ink-soft:#6b5632;
+  --line:#ecd98f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.9;font-size:16px;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px);
+}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.5;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{background:var(--gold);border-bottom:4px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.35rem;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover,nav a[aria-current="page"]{background:var(--ink);color:var(--gold-pale)}
+
+/* page title */
+.page-title{padding:40px 0 12px}
+.page-title .box{background:var(--paper);border:2px solid var(--ink);border-left:14px solid var(--gold);box-shadow:6px 6px 0 var(--gold);padding:18px 28px;display:flex;align-items:center;gap:20px}
+.page-title h1{font-size:clamp(1.6rem,4vw,2.2rem)}
+.page-title p{margin:4px 0 0;color:var(--ink-soft)}
+.page-title svg{flex:none;width:72px;height:72px}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.jump a{padding:2px 16px;border:2px solid var(--ink);border-radius:20px;background:var(--paper);text-decoration:none;font-weight:500;font-size:.95rem}
+.jump a:hover{background:var(--ink);color:var(--gold-pale)}
+
+section{padding:28px 0}
+.sec-title{display:inline-block;background:var(--gold);border:2px solid var(--ink);padding:2px 18px;font-size:1.35rem;margin-bottom:20px;border-radius:4px}
+.panel{background:var(--paper);border:2px solid var(--ink);padding:22px 26px}
+.work-title{font-size:1.15rem;margin-bottom:14px}
+.meta{font-size:.85rem;color:var(--gold-deep);font-weight:700}
+
+/* 4koma */
+.koma{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.koma li{background:#fff;border:3px solid var(--ink);padding:10px 10px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.koma .no{align-self:flex-start;font-family:"Shippori Mincho",serif;font-weight:700;font-size:.85rem;background:var(--gold);border:1.5px solid var(--ink);padding:0 8px;border-radius:3px}
+.koma svg{width:68px;height:68px}
+.koma p{margin:0;font-size:.92rem;line-height:1.65;background:var(--gold-pale);border:2px solid var(--ink);border-radius:12px;padding:8px 10px;width:100%}
+.koma .coin{font-size:2rem;line-height:1}
+
+/* illustration */
+.illust{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+.illust svg.chart{width:100%;height:auto;background:#fff;border:3px solid var(--ink)}
+.illust p{margin:0 0 10px}
+
+/* essay */
+.essay{max-width:700px}
+.essay h3{font-size:1.4rem;margin:2px 0 4px}
+.essay p{margin:0 0 14px;text-align:justify}
+.essay .sub{font-family:"Shippori Mincho",serif;font-weight:700;margin:20px 0 6px;font-size:1.05rem;border-left:6px solid var(--gold);padding-left:10px}
+
+.back{text-align:center;margin:12px 0 0}
+.back a{font-weight:700}
+
+footer{margin-top:40px;background:var(--ink);color:var(--gold-pale);padding:18px 0;font-size:.9rem;text-align:center}
+
+@media (max-width:760px){
+  .page-title .box{padding:14px 18px;gap:14px}
+  .page-title svg{width:56px;height:56px}
+  .koma{grid-template-columns:repeat(2,1fr)}
+  .illust{grid-template-columns:1fr}
+  .panel{padding:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- 招き猫アイコン -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="neko-face" viewBox="0 0 120 120">
+    <polygon points="22,48 20,14 52,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="98,48 100,14 68,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="60" cy="68" rx="42" ry="34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4"/>
+    <path d="M54 36 q6 9 12 0" fill="none" stroke="#daa520" stroke-width="5" stroke-linecap="round"/>
+    <path d="M36 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <path d="M70 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="33" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <circle cx="87" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <ellipse cx="60" cy="74" rx="4" ry="3" fill="#b3322a"/>
+    <path d="M52 81 q4 6 8 0 q4 6 8 0" fill="none" stroke="#3b2a10" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 108 q30 14 60 0 l0 8 q-30 14 -60 0 z" fill="#b3322a"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">小判ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html" aria-current="page">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <div class="box">
+        <svg viewBox="0 0 120 120" role="img" aria-label="招き猫のアイコン"><use href="#neko-face"/></svg>
+        <div>
+          <h1>コラム</h1>
+          <p>金融学に関する漫画やイラスト、小論文風の軽い記事を置いています。</p>
+        </div>
+      </div>
+      <nav class="jump" aria-label="コラム内のリンク">
+        <a href="#manga">4コマ漫画</a>
+        <a href="#illust">イラスト</a>
+        <a href="#essay">小論文</a>
+      </nav>
+    </div>
+  </div>
+
+  <section id="manga">
+    <div class="wrap">
+      <h2 class="sec-title">4コマ漫画</h2>
+      <div class="panel">
+        <h3 class="work-title">金利が上がると債券はどうなる？</h3>
+        <ol class="koma">
+          <li>
+            <span class="no">起</span>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#neko-face"/></svg>
+            <p>債券を100万円で買ったニャ。利息は年1％もらえるニャ。</p>
+          </li>
+          <li>
+            <span class="no">承</span>
+            <span class="coin" aria-hidden="true">📈</span>
+            <p>あっ、新しい債券は年2％の利息だニャ！</p>
+          </li>
+          <li>
+            <span class="no">転</span>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#neko-face"/></svg>
+            <p>1％の私の債券は、だれも買ってくれないニャ…値下がりだニャ。</p>
+          </li>
+          <li>
+            <span class="no">結</span>
+            <span class="coin" aria-hidden="true">📝</span>
+            <p>金利が上がると、古い債券の値段は下がる。覚えたニャ！</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="illust">
+    <div class="wrap">
+      <h2 class="sec-title">イラスト</h2>
+      <div class="panel">
+        <h3 class="work-title">招き猫と学ぶ複利のふしぎ</h3>
+        <div class="illust">
+          <svg class="chart" viewBox="0 0 360 210" role="img" aria-label="100万円を年3％で複利運用したとき、10年後に約134万円、20年後に約181万円、30年後に約243万円になることを示す棒グラフ">
+            <line x1="20" y1="170" x2="340" y2="170" stroke="#3b2a10" stroke-width="3"/>
+            <rect x="40" y="112" width="56" height="58" fill="#fbefc4" stroke="#3b2a10" stroke-width="3"/>
+            <rect x="120" y="93" width="56" height="77" fill="#f0cf6a" stroke="#3b2a10" stroke-width="3"/>
+            <rect x="200" y="66" width="56" height="104" fill="#e4b73a" stroke="#3b2a10" stroke-width="3"/>
+            <rect x="280" y="30" width="56" height="140" fill="#daa520" stroke="#3b2a10" stroke-width="3"/>
+            <g font-size="13" font-weight="700" fill="#3b2a10" text-anchor="middle" font-family="Zen Kaku Gothic New, sans-serif">
+              <text x="68" y="104">100万円</text>
+              <text x="148" y="85">134万円</text>
+              <text x="228" y="58">181万円</text>
+              <text x="308" y="22">243万円</text>
+              <text x="68" y="190">今</text>
+              <text x="148" y="190">10年後</text>
+              <text x="228" y="190">20年後</text>
+              <text x="308" y="190">30年後</text>
+            </g>
+            <svg x="14" y="26" width="46" height="46" viewBox="0 0 120 120"><use href="#neko-face"/></svg>
+          </svg>
+          <div>
+            <p class="meta">年3％の複利で運用したら？</p>
+            <p>100万円を年3％で運用すると、利息にも利息がつくので、増え方がだんだん大きくなります。30年後には約2.4倍。時間を味方につける、というのはこういうことかもしれません。</p>
+            <p class="meta">※計算上の例で、実際の運用成果を保証するものではありません。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="essay">
+    <div class="wrap">
+      <h2 class="sec-title">小論文</h2>
+      <div class="panel essay">
+        <p class="meta">コラム｜2026.10.08</p>
+        <h3>お金はなぜ「信用」で動くのか</h3>
+
+        <p class="sub">はじめに</p>
+        <p>私たちは1万円札を、ただの紙ではなく「1万円の価値があるもの」として使っています。紙としての原価は数十円ほどのはずなのに、なぜお店の人は受け取ってくれるのでしょうか。この疑問を、勉強したことをもとに考えてみます。</p>
+
+        <p class="sub">お金は「みんなが受け取る」という約束</p>
+        <p>お金の価値を支えているのは、物そのものの価値ではなく、「次の人もこれを受け取ってくれる」という信用だと教科書にありました。自分が受け取ったお金を、別の誰かが同じ価値で受け取ってくれると信じられるから、お金は回っていきます。</p>
+
+        <p class="sub">銀行も信用の上に立っている</p>
+        <p>銀行が預金を貸し出して、お金が増えていく信用創造のしくみも、預けた人が「いつでも引き出せる」と信じていることが前提です。もし全員が一度に引き出そうとすれば成り立ちません。だから金融では、信用を守るためのルールや中央銀行の役割がとても大切になるのだと思いました。</p>
+
+        <p class="sub">おわりに</p>
+        <p>お金を支えているのは、目に見えない信用だと知って、毎日の買い物の見え方が少し変わりました。次は、その信用を守る中央銀行の働きについて調べてみたいです。</p>
+      </div>
+      <p class="back"><a href="index.html">ホームにもどる</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 小判ノート｜金融学の勉強サイト</div>
+</footer>
+
+</body>
+</html>
