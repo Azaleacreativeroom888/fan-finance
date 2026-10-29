@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金融学の辞書｜小判ノート 金融学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#daa520;
+  --gold-deep:#a97c0f;
+  --gold-pale:#fbefc4;
+  --paper:#fffcee;
+  --ink:#3b2a10;
+  --ink-soft:#6b5632;
+  --line:#ecd98f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.9;font-size:16px;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px);
+}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3,dt{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.5;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{background:var(--gold);border-bottom:4px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.35rem;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover,nav a[aria-current="page"]{background:var(--ink);color:var(--gold-pale)}
+
+/* page title */
+.page-title{padding:40px 0 12px}
+.page-title .box{background:var(--paper);border:2px solid var(--ink);border-left:14px solid var(--gold);box-shadow:6px 6px 0 var(--gold);padding:18px 28px;display:flex;align-items:center;gap:20px}
+.page-title h1{font-size:clamp(1.6rem,4vw,2.2rem)}
+.page-title p{margin:4px 0 0;color:var(--ink-soft)}
+.page-title svg{flex:none;width:72px;height:72px}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.jump a{padding:2px 16px;border:2px solid var(--ink);border-radius:20px;background:var(--paper);text-decoration:none;font-weight:500;font-size:.95rem}
+.jump a:hover{background:var(--ink);color:var(--gold-pale)}
+
+/* dictionary */
+.group{padding:20px 0 8px}
+.gtitle{display:inline-block;background:var(--gold);border:2px solid var(--ink);padding:0 18px;font-size:1.15rem;margin-bottom:14px;border-radius:4px}
+dl{margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.item{background:var(--paper);border:2px solid var(--ink);border-left:8px solid var(--gold);padding:10px 18px 12px}
+dt{font-size:1.1rem;font-weight:700}
+dd{margin:2px 0 0;font-size:.95rem}
+
+.back{text-align:center;margin:28px 0 0}
+.back a{font-weight:700}
+
+footer{margin-top:40px;background:var(--ink);color:var(--gold-pale);padding:18px 0;font-size:.9rem;text-align:center}
+
+@media (max-width:760px){
+  .page-title .box{padding:14px 18px;gap:14px}
+  .page-title svg{width:56px;height:56px}
+  dl{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- 招き猫アイコン -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="neko-face" viewBox="0 0 120 120">
+    <polygon points="22,48 20,14 52,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="98,48 100,14 68,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="60" cy="68" rx="42" ry="34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4"/>
+    <path d="M54 36 q6 9 12 0" fill="none" stroke="#daa520" stroke-width="5" stroke-linecap="round"/>
+    <path d="M36 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <path d="M70 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="33" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <circle cx="87" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <ellipse cx="60" cy="74" rx="4" ry="3" fill="#b3322a"/>
+    <path d="M52 81 q4 6 8 0 q4 6 8 0" fill="none" stroke="#3b2a10" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 108 q30 14 60 0 l0 8 q-30 14 -60 0 z" fill="#b3322a"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">小判ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html" aria-current="page">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <div class="box">
+        <svg viewBox="0 0 120 120" role="img" aria-label="招き猫のアイコン"><use href="#neko-face"/></svg>
+        <div>
+          <h1>金融学の辞書</h1>
+          <p>勉強で出会った金融用語を、五十音順にまとめています。</p>
+        </div>
+      </div>
+      <nav class="jump" aria-label="五十音のリンク">
+        <a href="#a">あ行</a>
+        <a href="#ka">か行</a>
+        <a href="#sa">さ行</a>
+        <a href="#ta">た行</a>
+        <a href="#na">な行</a>
+        <a href="#ha">は行</a>
+        <a href="#ya">や行</a>
+        <a href="#ra">ら行</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section class="group" id="a">
+      <h2 class="gtitle">あ行</h2>
+      <dl>
+        <div class="item"><dt>インフレーション</dt><dd>物やサービスの値段が全体的に上がり続けること。同じお金で買えるものが減るので、お金の価値は下がる。</dd></div>
+        <div class="item"><dt>円高・円安</dt><dd>円高は他の通貨に対して円の価値が上がること、円安は下がること。1ドル＝150円から140円になるのは円高。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="ka">
+      <h2 class="gtitle">か行</h2>
+      <dl>
+        <div class="item"><dt>為替レート</dt><dd>異なる通貨を交換するときの比率。「1ドル＝いくら」のように表す。</dd></div>
+        <div class="item"><dt>株式</dt><dd>会社が資金を集めるために発行する証券。持っていると会社の出資者（株主）になり、配当や値上がり益が期待できる。</dd></div>
+        <div class="item"><dt>元本</dt><dd>預けたり投資したりしたお金のもとの金額。利息や利益を計算するときのもとになる。</dd></div>
+        <div class="item"><dt>金利</dt><dd>お金を借りたり預けたりするときの「値段」にあたるもの。元本に対する利息の割合で表す。</dd></div>
+        <div class="item"><dt>金融政策</dt><dd>中央銀行が金利やお金の量を調整して、物価や景気を安定させようとする政策。</dd></div>
+        <div class="item"><dt>景気</dt><dd>経済全体の活発さ。モノがよく売れて仕事が多いときは好景気、反対のときは不景気という。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="sa">
+      <h2 class="gtitle">さ行</h2>
+      <dl>
+        <div class="item"><dt>債券</dt><dd>国や会社がお金を借りるために発行する証券。決まった利息を払い、満期に元本を返す約束をしている。</dd></div>
+        <div class="item"><dt>資産</dt><dd>預金・株式・不動産など、持っていて価値のあるもの。</dd></div>
+        <div class="item"><dt>信用創造</dt><dd>銀行が預金を貸し出し、その貸出金がまた別の預金になることを繰り返して、世の中のお金が増えていくしくみ。</dd></div>
+        <div class="item"><dt>証券</dt><dd>財産としての権利を表すもの。株式や債券などがある。</dd></div>
+        <div class="item"><dt>政策金利</dt><dd>中央銀行が金融政策のために決める基準の金利。ここが動くと、世の中の金利全体にも影響する。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="ta">
+      <h2 class="gtitle">た行</h2>
+      <dl>
+        <div class="item"><dt>単利</dt><dd>元本にだけ利息がつく計算方法。利息には利息がつかない。</dd></div>
+        <div class="item"><dt>中央銀行</dt><dd>国の金融の中心となる銀行。紙幣を発行し、金融政策を行い、一般の銀行との取引もする。</dd></div>
+        <div class="item"><dt>貯蓄</dt><dd>収入のうち、使わずに残しておくお金。</dd></div>
+        <div class="item"><dt>デフレーション</dt><dd>物やサービスの値段が全体的に下がり続けること。インフレーションの反対。</dd></div>
+        <div class="item"><dt>投資信託</dt><dd>多くの人から集めたお金を専門家がまとめて株式や債券などに投資し、その成果を出資した人に分ける商品。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="na">
+      <h2 class="gtitle">な行</h2>
+      <dl>
+        <div class="item"><dt>日本銀行</dt><dd>日本の中央銀行。日本銀行券（お札）を発行し、金融政策を行う。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="ha">
+      <h2 class="gtitle">は行</h2>
+      <dl>
+        <div class="item"><dt>配当</dt><dd>会社が利益の一部を株主に分けること。</dd></div>
+        <div class="item"><dt>複利</dt><dd>利息にもさらに利息がつく計算方法。長い期間ほど、単利との差が大きくなる。</dd></div>
+        <div class="item"><dt>分散投資</dt><dd>お金を一つにまとめず、複数のものに分けて投資すること。一つが値下がりしても、全体への影響を小さくできる。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="ya">
+      <h2 class="gtitle">や行</h2>
+      <dl>
+        <div class="item"><dt>融資</dt><dd>銀行などが企業や個人にお金を貸すこと。</dd></div>
+        <div class="item"><dt>預金</dt><dd>銀行などの金融機関にお金を預けること。また、その預けたお金。</dd></div>
+      </dl>
+    </section>
+
+    <section class="group" id="ra">
+      <h2 class="gtitle">ら行</h2>
+      <dl>
+        <div class="item"><dt>利回り</dt><dd>投資した元本に対して、1年あたりどれだけの収益が得られるかを割合で表したもの。</dd></div>
+        <div class="item"><dt>リスク</dt><dd>投資の結果が予想からどれだけぶれるかという、ばらつきの大きさ。大きいほど、得も損も大きくなりうる。</dd></div>
+        <div class="item"><dt>リターン</dt><dd>投資から得られる収益。値上がり益、利息、配当などをまとめていう。</dd></div>
+        <div class="item"><dt>流動性</dt><dd>持っている資産を、どれだけ簡単に現金に換えられるかという度合い。</dd></div>
+      </dl>
+    </section>
+
+    <p class="back"><a href="column.html">コラムにもどる</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 小判ノート｜金融学の勉強サイト</div>
+</footer>
+
+</body>
+</html>
