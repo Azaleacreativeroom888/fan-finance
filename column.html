@@ -55,6 +55,14 @@ section{padding:28px 0}
 .work-title{font-size:1.15rem;margin-bottom:14px}
 .meta{font-size:.85rem;color:var(--gold-deep);font-weight:700}
 
+/* feature: dictionary */
+.feature{display:flex;align-items:center;gap:22px;background:var(--gold);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:18px 26px;text-decoration:none}
+.feature:hover{background:var(--gold-pale)}
+.feature .book{flex:none;width:64px;height:80px;background:var(--paper);border:3px solid var(--ink);border-left-width:10px;display:flex;align-items:center;justify-content:center;font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.3rem}
+.feature h3{font-size:1.3rem}
+.feature p{margin:2px 0 0;font-size:.95rem}
+.feature .go{margin-left:auto;flex:none;font-weight:700;border:2px solid var(--ink);background:var(--paper);padding:2px 16px;border-radius:20px}
+
 /* 4koma */
 .koma{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0;padding:0;list-style:none}
 .koma li{background:#fff;border:3px solid var(--ink);padding:10px 10px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
@@ -132,12 +140,27 @@ footer{margin-top:40px;background:var(--ink);color:var(--gold-pale);padding:18px
         </div>
       </div>
       <nav class="jump" aria-label="コラム内のリンク">
+        <a href="#dictionary">金融学の辞書</a>
         <a href="#manga">4コマ漫画</a>
         <a href="#illust">イラスト</a>
         <a href="#essay">小論文</a>
       </nav>
     </div>
   </div>
+
+  <section id="dictionary">
+    <div class="wrap">
+      <h2 class="sec-title">特集</h2>
+      <a class="feature" href="report1.html">
+        <span class="book" aria-hidden="true">辞書</span>
+        <div>
+          <h3>金融学の辞書</h3>
+          <p>勉強で出会った金融用語を、自分の言葉でまとめた用語集です。</p>
+        </div>
+        <span class="go">開く</span>
+      </a>
+    </div>
+  </section>
 
   <section id="manga">
     <div class="wrap">
