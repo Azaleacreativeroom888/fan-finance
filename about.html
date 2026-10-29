@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>このサイトについて｜小判ノート 金融学の勉強サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#daa520;
+  --gold-deep:#a97c0f;
+  --gold-pale:#fbefc4;
+  --paper:#fffcee;
+  --ink:#3b2a10;
+  --ink-soft:#6b5632;
+  --red:#a12a22;
+  --line:#ecd98f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.9;font-size:16px;
+  background-color:var(--paper);
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--line) 31px,var(--line) 32px);
+}
+a{color:inherit}
+a:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.5;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{background:var(--gold);border-bottom:4px solid var(--ink)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.35rem;text-decoration:none}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:4px 14px;text-decoration:none;font-weight:500;border-radius:4px}
+nav a:hover,nav a[aria-current="page"]{background:var(--ink);color:var(--gold-pale)}
+
+/* page title */
+.page-title{padding:40px 0 12px}
+.page-title .box{background:var(--paper);border:2px solid var(--ink);border-left:14px solid var(--gold);box-shadow:6px 6px 0 var(--gold);padding:18px 28px;display:flex;align-items:center;gap:20px}
+.page-title h1{font-size:clamp(1.6rem,4vw,2.2rem)}
+.page-title p{margin:4px 0 0;color:var(--ink-soft)}
+.page-title svg{flex:none;width:72px;height:72px}
+
+section{padding:24px 0}
+.sec-title{display:inline-block;background:var(--gold);border:2px solid var(--ink);padding:2px 18px;font-size:1.3rem;margin-bottom:18px;border-radius:4px}
+.panel{background:var(--paper);border:2px solid var(--ink);padding:20px 26px}
+.panel p{margin:0 0 10px}
+.panel p:last-child{margin-bottom:0}
+
+/* site contents */
+.pages{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px}
+.pages li{padding:8px 0;border-bottom:1px dashed var(--gold-deep)}
+.pages a{font-weight:700}
+.pages span{display:block;font-size:.9rem;color:var(--ink-soft)}
+
+/* links */
+.group-label{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.05rem;border-left:6px solid var(--gold);padding-left:10px;margin:22px 0 12px}
+.group-label:first-of-type{margin-top:0}
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.link-card{display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--paper);border:2px solid var(--ink);border-left:8px solid var(--gold);padding:10px 14px}
+.link-card:hover{background:var(--gold-pale)}
+.link-icon{flex:none;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:var(--gold-pale);border:2px solid var(--ink);border-radius:4px}
+.link-text{flex:1;min-width:0}
+.link-name{display:block;font-weight:700;line-height:1.5}
+.link-desc{display:block;font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+.link-arrow{flex:none;font-size:1.4rem;font-weight:700}
+
+/* form */
+.form-intro{margin:0 0 18px}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-weight:700;margin-bottom:4px}
+.required{color:var(--red)}
+.form-input,.form-textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:4px;padding:8px 12px}
+.form-input::placeholder,.form-textarea::placeholder{color:#a8977a}
+.form-textarea{min-height:150px;resize:vertical}
+.field-error{display:block;font-size:.85rem;color:var(--red);min-height:0}
+.form-submit{font:inherit;font-weight:700;cursor:pointer;background:var(--gold);color:var(--ink);border:2px solid var(--ink);border-radius:4px;padding:8px 28px;box-shadow:4px 4px 0 var(--ink)}
+.form-submit:hover{background:var(--ink);color:var(--gold-pale)}
+.form-submit:disabled{opacity:.5;cursor:not-allowed}
+.form-success,.form-error-global{border:2px solid var(--ink);border-radius:4px;padding:10px 16px;margin-bottom:16px;font-weight:500}
+.form-success{background:var(--gold-pale)}
+.form-error-global{background:#fde8e5;color:var(--red);border-color:var(--red)}
+
+.back{text-align:center;margin:20px 0 0}
+.back a{font-weight:700}
+
+/* notice + footer */
+.notice{margin-top:36px;border-top:2px dashed var(--gold-deep);padding:18px 0;font-size:.85rem;color:var(--ink-soft);line-height:1.8}
+.notice p{margin:0 0 8px}
+footer{background:var(--ink);color:var(--gold-pale);padding:18px 0;font-size:.9rem;text-align:center}
+
+@media (max-width:760px){
+  .page-title .box{padding:14px 18px;gap:14px}
+  .page-title svg{width:56px;height:56px}
+  .pages{grid-template-columns:1fr}
+  .panel{padding:18px}
+  .link-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- 招き猫アイコン -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="neko-face" viewBox="0 0 120 120">
+    <polygon points="22,48 20,14 52,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="98,48 100,14 68,34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="60" cy="68" rx="42" ry="34" fill="#fffdf5" stroke="#3b2a10" stroke-width="4"/>
+    <path d="M54 36 q6 9 12 0" fill="none" stroke="#daa520" stroke-width="5" stroke-linecap="round"/>
+    <path d="M36 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <path d="M70 64 q7 -8 14 0" fill="none" stroke="#3b2a10" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="33" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <circle cx="87" cy="78" r="7" fill="#daa520" opacity=".45"/>
+    <ellipse cx="60" cy="74" rx="4" ry="3" fill="#b3322a"/>
+    <path d="M52 81 q4 6 8 0 q4 6 8 0" fill="none" stroke="#3b2a10" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 108 q30 14 60 0 l0 8 q-30 14 -60 0 z" fill="#b3322a"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">小判ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html" aria-current="page">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">
+    <div class="wrap">
+      <div class="box">
+        <svg viewBox="0 0 120 120" role="img" aria-label="招き猫のアイコン"><use href="#neko-face"/></svg>
+        <div>
+          <h1>このサイトについて</h1>
+          <p>サイトの紹介・リンク・お問い合わせ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section>
+      <h2 class="sec-title">小判ノートとは</h2>
+      <div class="panel">
+        <p>金融学を勉強している学生が、学んだことをノートのようにまとめていく勉強サイトです。お金や銀行、金利、投資のしくみなどを、少しずつ自分の言葉で整理しています。</p>
+        <p>管理人：Azalea72（漫画やイラストも描いています）</p>
+        <ul class="pages">
+          <li><a href="blog.html">ブログ</a><span>勉強の進み具合を日付つきでメモ</span></li>
+          <li><a href="column.html">コラム</a><span>漫画・イラスト・小論文風の記事</span></li>
+          <li><a href="report1.html">金融学の辞書</a><span>勉強で出会った金融用語の用語集</span></li>
+          <li><a href="index.html">ホーム</a><span>サイトの入り口</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">リンク</h2>
+
+      <p class="group-label">漫画・イラスト掲載サイト</p>
+      <div class="link-grid">
+        <a class="link-card" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">📚</div>
+          <div class="link-text">
+            <span class="link-name">ジャンプルーキー</span>
+            <span class="link-desc">オリジナル漫画を掲載中</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="link-card" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">🎨</div>
+          <div class="link-text">
+            <span class="link-name">Pixiv</span>
+            <span class="link-desc">二次創作はこちらに掲載</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <p class="group-label">SNS・その他</p>
+      <div class="link-grid">
+        <a class="link-card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">🦋</div>
+          <div class="link-text">
+            <span class="link-name">Bluesky</span>
+            <span class="link-desc">近況・作品のお知らせ</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="link-card" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">🎬</div>
+          <div class="link-text">
+            <span class="link-name">YouTube（リリポピ）</span>
+            <span class="link-desc">動画チャンネル</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="link-card" href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">🌸</div>
+          <div class="link-text">
+            <span class="link-name">リリポピのホームページ</span>
+            <span class="link-desc">別サイト</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <p class="group-label">Azalea72のホームページ</p>
+      <div class="link-grid">
+        <a class="link-card" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">📖</div>
+          <div class="link-text">
+            <span class="link-name">書評サイト</span>
+            <span class="link-desc">本・アニメ・映画・ゲーム・小説の備忘録</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">🍔</div>
+          <div class="link-text">
+            <span class="link-name">英語サイト（English Site）</span>
+            <span class="link-desc">英語話者と英語学習者に向けたサイト</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener">
+          <div class="link-icon" aria-hidden="true">☁️</div>
+          <div class="link-text">
+            <span class="link-name">水彩画サイト</span>
+            <span class="link-desc">水彩画掲載</span>
+          </div>
+          <span class="link-arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">お問い合わせフォーム</h2>
+      <div class="panel">
+        <p class="form-intro">ご質問・ご感想などはこちらからどうぞ。<br>Gmailで受け取り、返信いたします。</p>
+
+        <div data-fs-success class="form-success" style="display:none;" role="status">メッセージを送信しました。ありがとうございます！</div>
+        <div data-fs-error class="form-error-global" style="display:none;" role="alert"></div>
+
+        <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="name">お名前</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="お名前（ニックネームでもOK）">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">メールアドレス <span class="required">*</span></label>
+            <input class="form-input" type="email" id="email" name="email" data-fs-field placeholder="example@email.com" required>
+            <span data-fs-error="email" class="field-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">メッセージ <span class="required">*</span></label>
+            <textarea class="form-textarea" id="message" name="message" data-fs-field placeholder="メッセージを入力してください" rows="6" required></textarea>
+            <span data-fs-error="message" class="field-error"></span>
+          </div>
+          <button class="form-submit" type="submit" data-fs-submit-btn>送信する</button>
+        </form>
+      </div>
+    </section>
+
+    <p class="back"><a href="index.html">ホームにもどる</a></p>
+
+    <div class="notice">
+      <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載・転載、二次利用を禁止します。スクリーンショットの転載・無断引用はご遠慮ください。</p>
+      <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 小判ノート｜金融学の勉強サイト</div>
+</footer>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
