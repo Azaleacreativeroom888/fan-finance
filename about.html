@@ -255,6 +255,9 @@ footer{background:var(--ink);color:var(--gold-pale);padding:18px 0;font-size:.9r
         <div data-fs-error class="form-error-global" style="display:none;" role="alert"></div>
 
         <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+          <!-- どのサイトからの連絡か分かるようにする欄（メールに表示されます） -->
+          <input type="hidden" name="サイトについて" value="金融学サイト（小判ノート）について">
+          <input type="hidden" name="_subject" value="【金融学サイト・小判ノート】お問い合わせ">
           <div class="form-group">
             <label class="form-label" for="name">お名前</label>
             <input class="form-input" type="text" id="name" name="name" placeholder="お名前（ニックネームでもOK）">
